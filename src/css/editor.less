@@ -1,10 +1,12 @@
 .artalk > .artalk-editor {
-  border: 1px solid @color-border;
+  border: none;
   border-radius: @block-radius;
   margin-bottom: @block-margin;
   overflow: hidden;
   position: relative;
-  background: #FFF;
+  background: var(--at-bg-editor);
+  color: var(--at-font-editor);
+  box-shadow: 0 6px 12px rgba(0,0,0,.1);
 
   @media only screen and (max-width: 768px) {
     & > {
@@ -20,15 +22,15 @@
     padding-bottom: 0;
 
     input {
-      border: 2px solid transparent;
+      border: none;
       transition: color .3s ease;
       flex: 1;
-      background: transparent;
       border-radius: @block-radius/2;
       padding: 6px 5px;
       resize: none;
       outline: none;
       width: 100%;
+      background: var(--at-bg-editor);
 
       &:not(:last-child) {
         margin-right: 2px;
@@ -45,8 +47,8 @@
       min-height: 130px;
       resize: none;
       word-wrap: break-word;
-      border: 2px solid transparent;
-      border-radius: @block-radius/2;
+      border: none;
+      background: var(--at-bg-editor);
       outline: none;
       overflow: hidden;
     }
@@ -59,7 +61,7 @@
       position: relative;
       text-align: center;
       min-height: 30px;
-      border-top: 1px solid @color-border;
+      border-top: 1px solid var(--at-bg-main);
       margin-top: 4px;
       font-weight: 100;
       font-size: 12px;
@@ -67,10 +69,10 @@
       justify-content: center;
       place-content: flex-end;
       flex-direction: row;
-      background: #FFF;
+      background: var(--at-bg-editor);
 
       & > span {
-        color: @color-meta;
+        color: var(--at-font-editor);
         border-radius: 2px;
         margin-right: 14px;
       }
@@ -80,7 +82,7 @@
       font-size: 14px;
       height: 30px;
       line-height: 30px;
-      background: rgba(244, 244, 244, 0.75);
+      background: var(--at-font-color);
       padding: 0 30px 0 10px;
       position: absolute;
       right: 10px;
@@ -109,7 +111,7 @@
         font-weight: 700;
 
         &:hover {
-          color: @color-deep;
+          color: var(--at-font-color);
         }
       }
     }
@@ -120,7 +122,7 @@
     height: 180px;
     width: 100%;
     overflow: hidden;
-    border-top: 1px solid @color-border;
+    border-top: 1px solid var(--at-bg-main);
     animation: .3s both artalkFadeIn;
     transition: .2s height ease-in-out;
   }
@@ -128,7 +130,7 @@
   & > .artalk-editor-bottom {
     display: flex;
     flex-direction: row;
-    border-top: 1px solid @color-border;
+    border-top: 1px solid var(--at-bg-main);
     padding: 0 0 0 @block-padding - 5px;
 
     .artalk-editor-bottom-part {
@@ -149,17 +151,17 @@
     .artalk-editor-action {
       padding: 0 8px;
       cursor: pointer;
-      color: @color-grey;
+      color: var(--at-font-color);
       font-size: @font-size;
       user-select: none;
 
       & > i {
-        color: @color-grey;
+        color: var(--at-font-color);
         display: inline-flex;
         vertical-align: sub;
         margin-left: 4px;
         svg.markdown path {
-          fill: @color-grey;
+          fill: var(--at-font-color);
         }
       }
 
@@ -172,13 +174,13 @@
       }
 
       &:not(:last-child) {
-        border-right: 1px solid @color-border;
+        border-right: 1px solid var(--at-bg-main);
       }
     }
 
     .artalk-send-btn {
       background: @color-main;
-      color: #FFF;
+      color: var(--at-font-color);
       border: none;
       padding: 0 30px;
       height: 30px;

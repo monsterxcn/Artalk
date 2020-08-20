@@ -45,10 +45,10 @@ export default class Comment extends ArtalkContext {
         if (this.contentEl.classList.contains('artalk-hide')) {
           this.contentEl.classList.remove('artalk-hide')
           this.artalk.ui.playFadeInAnim(this.contentEl)
-          contentShowBtn.innerHTML = '收起内容'
+          contentShowBtn.innerHTML = '还是叠上吧'
         } else {
           this.contentEl.classList.add('artalk-hide')
-          contentShowBtn.innerHTML = '查看内容'
+          contentShowBtn.innerHTML = '让我康康'
         }
       })
     }

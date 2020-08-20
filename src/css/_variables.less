@@ -1,19 +1,47 @@
-@color-default: #565a5f;
+/* @color-default: #565a5f;
 @color-deep: #2a2e2e;
 @color-grey: #999;
 @color-meta: #757e91;
 @color-border: #eceff2;
 @color-bg: #FFF;
-@color-bg-grey: #F4F4F4;
-@color-main: #0083ff;
+@color-bg-grey: #F4F4F4; */
+@color-main: #0070f3;
 @color-red: #ff5652;
 @color-yellow: #ffa928;
 
-@font-family: "Helvetica Neue", "PingFangSC-Light", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+@font-family: 'Roboto Slab', 'Noto Serif SC', serif, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, pingfang sc, source han sans sc, noto sans cjk sc, sarasa gothic sc, microsoft yahei, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+@font-family-pre: 'Fira Code', SF Mono, Consolas, Monaco, 'Ubuntu Mono', monospace;
 @font-size: 14px;
 @line-height: 1.6em;
 
 @block-margin: 15px;
 @block-margin-mobile: 7px;
 @block-padding: 10px;
-@block-radius: 4px;
+@block-radius: 5px;
+
+:root {
+  --at-border-color: #e7e9ee;
+  --at-border-grey: #687a86;
+  --at-border-quote: #687A86;
+  /* change while mode-dark
+   */
+  --at-font-color: #2a2e2e;
+  --at-font-grey: #656c7a;
+  --at-font-editor: #fff;
+  --at-bg-main: #ffffff;
+  --at-bg-grey: #f4f4f4;
+  --at-bg-code: #f1f3f4;
+  --at-bg-editor: #ebeef2;
+  --at-border-editor: #dbdfe4;
+}
+[data-user-color-scheme="dark"],
+[data-theme="dark"] {
+  --at-font-color: #fff;
+  --at-font-grey: #eee;
+  --at-font-editor: #2a2e2e;
+  --at-bg-main: #2d3235;
+  --at-bg-grey: #46494e;
+  --at-bg-code: #1e2224;
+  --at-bg-editor: #1e2224;
+  --at-border-quote: #687a86;
+}

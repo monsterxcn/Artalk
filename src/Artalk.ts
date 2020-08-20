@@ -15,15 +15,15 @@ import { ArtalkConfig } from '~/types/artalk-config'
 
 const defaultOpts: ArtalkConfig = {
   el: '',
-  placeholder: '来啊，快活啊 ( ゜- ゜)',
-  noComment: '快来成为第一个评论的人吧~',
-  sendBtn: '发送评论',
+  placeholder: '说点什么 (づ￣ 3￣)づ',
+  noComment: '来做第一个留言的人吧！',
+  sendBtn: '传达',
   defaultAvatar: 'mp',
   pageKey: '',
   serverUrl: '',
   emoticons: require('./assets/emoticons.json'),
   gravatar: {
-    cdn: 'https://gravatar.loli.net/avatar/'
+    cdn: 'https://secure.gravatar.com/avatar/'
   }
 }
 
@@ -43,12 +43,11 @@ export default class Artalk {
 
   constructor (conf: ArtalkConfig) {
     // Version Information
-    console.log(`\n %c `
-      + `Artalk v${ARTALK_VERSION} %c 一款简洁有趣的自托管评论系统 \n\n%c`
-      + `> https://artalk.js.org\n`
-      + `> https://github.com/qwqcode/Artalk\n`
-      + `> https://qwqaq.com\n`,
-      'color: #FFF; background: #1DAAFF; padding:5px 0;', 'color: #FFF; background: #656565; padding:5px 0;', '')
+    // I'm sorry
+    /* console.log(`\n %c Artalk v${ARTALK_VERSION} %c 有趣的自托管评论系统 \n`,
+      'color: #FFF; background: #1DAAFF; padding:5px 0;',
+      'color: #FFF; background: #656565; padding:5px 0;')
+    */
 
     // Options
     this.conf = { ...defaultOpts, ...conf }

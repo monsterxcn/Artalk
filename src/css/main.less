@@ -2,13 +2,22 @@
   position: relative;
   width: 100%;
   min-height: 200px;
+  
+  & ::-webkit-scrollbar {
+    width: .49rem!important;
+    height: .36rem!important;
+    background: 0 0!important;
+  }
+  & ::-webkit-scrollbar-thumb {
+    background: rgba(0,0,0,.3)!important;
+  }
 }
 
 .artalk, .artalk-layer-wrap {
   * {
     box-sizing: border-box;
     line-height: @line-height;
-    color: @color-default;
+    color: var(--at-font-color);
     font-family: @font-family;
     word-wrap: break-word;
     word-break: break-all;
@@ -17,12 +26,14 @@
   pre {
     padding: 10px;
     line-height: @line-height;
-    background-color: #f6f6f6;
-    color: #555;
+    background-color: var(--at-bg-code);
+    color: var(--at-font-grey);
     padding: 5px 10px;
     border-radius: @block-radius/2;
     margin: 0;
-    font-family: Source Code Pro,courier new,Input Mono,PT Mono,SFMono-Regular,Consolas,Monaco,Menlo,PingFang SC,Liberation Mono,Microsoft YaHei,Courier,monospace;
+    max-width: 95%;
+    overflow: auto;
+    font-family: @font-family-pre;
   }
 
   a {
@@ -34,8 +45,8 @@
     position: static;
     margin: 10px 0 10px 0;
     padding: 10px 20px 10px 20px;
-    background: #fcfcfc;
-    border-left: 4px solid #eee;
+    background: var(--at-bg-code);
+    border-left: 4px solid var(--at-border-quote);
   }
 
   p:first-child {
@@ -61,7 +72,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  background: @color-bg;
+  background: var(--at-bg-main);
   z-index: 10;
   align-items: center;
   justify-content: center;
@@ -197,7 +208,7 @@
       input {
         width: 100%;
         line-height: @formInputHeight + 4px;
-        border: 1px solid @color-grey;
+        border: 1px solid var(--at-font-grey);
         border-radius: @block-radius/2;
         outline: none;
         padding: 0 6px;

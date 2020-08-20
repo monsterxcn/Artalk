@@ -21,6 +21,7 @@ export default class List extends ArtalkContext {
 
   public closeCommentBtnEl: HTMLElement
   public openSidebarBtnEl: HTMLElement
+  public openLinkBtnEl: HTMLElement
 
   constructor (artalk: Artalk) {
     super(artalk)
@@ -134,6 +135,12 @@ export default class List extends ArtalkContext {
     this.openSidebarBtnEl = this.el.querySelector('[data-action="open-sidebar"]')
     this.openSidebarBtnEl.addEventListener('click', () => {
       this.artalk.sidebar.show()
+    })
+
+    // 仓库链接按钮
+    this.openLinkBtnEl = this.el.querySelector('[data-action="open-link"]')
+    this.openLinkBtnEl.addEventListener('click', () => {
+      window.open("https://github.com/qwqcode/Artalk", "Newwindow")
     })
 
     // 关闭评论按钮

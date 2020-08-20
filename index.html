@@ -4,51 +4,110 @@
   <meta charset="UTF-8">
   <title>Artalk DEMO</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
   <style>
-    * { box-sizing: border-box; }
-    body { padding:45px 10px;margin:0;background:#f4f4f4 }
-    .card { margin:0 auto;max-width:700px;position:relative;overflow:hidden;background:#FFF;border-radius:4px;padding:20px }
+    @import url('https://fonts.dogedoge.com/css2?family=Roboto+Slab:wght@400;500;700&family=Fira+Code&family=Noto+Serif+SC:wght@400;500;700;900&display=swap');
+
+    * { box-sizing: border-box }
+    body { padding:45px 10px;margin:0;background:#fafafa;margin-right: calc(-1 * (100vw - 100%));overflow-x: hidden }
+    .card { margin:0 auto;max-width:700px;position:relative;overflow:hidden;background:var(--at-bg-main);border-radius:5px;padding:20px;box-shadow: 10px 10px 5px 0 rgba(0,0,0,.02), 10px 10px 15px 0 rgba(0,0,0,.03) }
     .card:not(:last-child) { margin-bottom:10px }
-    .card.billboard { text-align: center; }
-    .title > a { display:block;text-decoration:none;color:#0083ff;font-size:35px;margin-top:0;margin-bottom:10px; }
+    .card.billboard { text-align: center }
+    .title > a { display:block;text-decoration:none;color:#0083ff;font-size:35px;margin-top:0;margin-bottom:10px }
     .title > a:hover { margin-left:0 }
     .title > a > span { opacity:0 }
     .title > a:hover>span { opacity:1 }
     .desc { font-size:12px;color:#757e91 }
-    .social { margin-top:20px }
+    .social { margin: 20px 20px }
+    .social > a { display:inline;text-decoration:none;color:#0083ff;font-size:16px }
     .social > a:not(:last-child) { margin-right:2px }
     @media only screen and (max-width: 768px) {
-      body { padding: 0;background: #FFF; }
-      .card.billboard { padding-top: 20px; }
-      .card { width: 100%;padding: 5px; }
+      body { padding: 0;background: #fafafa }
+      .card.billboard { padding-top: 20px }
+      .card { width: 100%;padding: 5px }
     }
-    .to-top { right: 25px;bottom: 25px;display: block;cursor: pointer;text-align: center;width: 60px;height: 37px;line-height: 37px;font-size: 13px;color: #757e91;background: #fff;opacity: 0.8;border-radius: 4px;border: 1px solid #eceff2;position: fixed; }
+    .to-top { right: 25px;bottom: 25px;display: block;cursor: pointer;text-align: center;width: 60px;height: 37px;line-height: 37px;font-size: 13px;color: #757e91;background: #fff;opacity: 0.8;border-radius: 4px;border: 1px solid #eceff2;position: fixed }
+    .to-night { left: 25px;bottom: 25px;display: block;cursor: pointer;text-align: center;width: 60px;height: 37px;line-height: 37px;font-size: 13px;color: #757e91;background: #fff;opacity: 0.8;border-radius: 4px;border: 1px solid #eceff2;position: fixed }
+    [data-user-color-scheme="dark"] body, [data-theme="dark"] body { background:#101213 }
   </style>
-<link href="dist/Artalk.css?32605c1999ff344cda74" rel="stylesheet"><script type="text/javascript" src="dist/Artalk.js?32605c1999ff344cda74"></script></head>
+  <script type="text/javascript">
+  (() => {
+    const e = document.documentElement,
+        t = e => {
+            try {
+                return localStorage.getItem(e)
+            } catch (e) {
+                return null
+            }
+        },
+        r = () => {
+            const t = getComputedStyle(e).getPropertyValue("--color-mode");
+            return t.length ? t.replace(/["'\s]/g, "") : "dark" === t ? "dark" : "light"
+        },
+        l = () => {
+            e.removeAttribute("data-user-color-scheme"), (e => {
+                try {
+                    localStorage.removeItem(e)
+                } catch (e) {}
+            })("user-color-scheme")
+        },
+        o = {
+            dark: !0,
+            light: !0
+        },
+        d = d => {
+            const c = d || t("user-color-scheme");
+            c === r() ? l() : o[c] ? e.setAttribute("data-user-color-scheme", c) : l()
+        },
+        c = {
+            dark: "light",
+            light: "dark"
+        },
+        m = () => {
+            var e = t("user-color-scheme");
+            if (o[e]) e = c[e];
+            else {
+                if (null !== e) return;
+                e = c[r()]
+            }
+            return ((e, t) => {
+                try {
+                    localStorage.setItem(e, t)
+                } catch (e) {}
+            })("user-color-scheme", e), e
+        };
+    d(), window.onload = (() => {
+        const e = document.querySelector('.to-night');
+        e.addEventListener("click", () => {
+            d(m())
+        })
+    })
+})()
+  </script>
+<link href="dist/Artalk.css?cfd1c121eabd5ac813e3" rel="stylesheet"><script type="text/javascript" src="dist/Artalk.js?cfd1c121eabd5ac813e3"></script></head>
 <body>
   <div class="card billboard artalk-fade-in">
-    <div class="title"><a href="https://github.com/qwqcode/Artalk" target="_blank"><span>&gt; </span>Artalk<span> &lt;</span></a></div>
-    <div class="desc">一款简洁有趣的自托管评论系统</div>
+    <div class="title"><a href="#"><span>&gt; </span>Talk<span> &lt;</span></a></div>
+    <div class="desc">你一定有什么想说的吧 OxO</div>
     <div class="social">
-      <a href="https://www.npmjs.com/package/artalk" target="_blank"><img src="https://img.shields.io/npm/v/artalk.svg?style=flat-square"></a>
-      <a href="https://www.npmjs.com/package/artalk" target="_blank"><img src="https://img.shields.io/npm/dt/artalk.svg?style=flat-square"></a>
-      <a href="https://github.com/qwqcode/Artalk/commits/master" target="_blank"><img src="https://img.shields.io/github/last-commit/qwqcode/Artalk?style=flat-square"></a>
-      <a href="https://github.com/qwqcode/Artalk/blob/master/LICENSE" target="_blank"><img src="https://img.shields.io/github/license/qwqcode/Artalk.svg?style=flat-square"></a>
-      <a href="https://github.com/qwqcode/Artalk#%E6%8D%90%E5%8A%A9" target="_blank"><img src="https://img.shields.io/badge/%24-donate-%23ff69b4.svg?style=flat-square"></a>
-      <a href="https://github.com/qwqcode/Artalk" target="_blank"><img src="https://img.shields.io/github/stars/qwqcode/Artalk.svg?style=social"></a>
+      <a href="https://monsterx.cn/">首页</a> · 
+      <a href="https://monsterx.cn/archive.html">归档</a> · 
+      <a href="https://monsterx.cn/links.html">友链</a> · 
+      <a href="https://monsterx.cn/about.html">关于</a>
     </div>
   </div>
   <div class="card artalk-fade-in">
     <div id="comments"></div>
   </div>
-  <div class="to-top artalk-fade-in" style="display: none;">TOP</div>
+  <div class="to-top artalk-fade-in" style="display: none;">Top</div>
+  <div class="to-night artalk-fade-in">Blink</div>
   <script>
     var artalk = new Artalk({
       el: '#comments',
-      placeholder: '来啊，快活啊 ( ゜- ゜)',
+      placeholder: '说点什么 (づ￣ 3￣)づ',
       defaultAvatar: 'mp',
-      pageKey: 'https://artalk.js.org/',
-      serverUrl: (location.hostname === 'localhost' || location.hostname === '127.0.0.1') ? 'http://localhost:23366/' : 'https://qwqaq.com/Artalk/index.php',
+      pageKey: 'https://lab.mocurio.com/artalk.html',
+      serverUrl: 'https://lab.mocurio.com/artalk/',
       readMore: {
         pageSize: 15,
         autoLoad: true
@@ -57,6 +116,11 @@
   </script>
   <script>
     (function () {
+      const toNightElem = document.querySelector('.to-night')
+      toNightElem.addEventListener('click', () => {
+        // darkmode.toggle();
+      })
+
       const toTopElem = document.querySelector('.to-top')
       toTopElem.addEventListener('click', () => {
         window.scrollTo(0, 0)
