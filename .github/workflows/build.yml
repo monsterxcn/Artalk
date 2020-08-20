@@ -6,7 +6,49 @@ on:
       - master
 
 jobs:
-  build:
+  build-branch-master:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+
+      - name: Cache
+        uses: actions/cache@v1
+        env:
+          cache-name: at-node-modules
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }}
+
+      - name: Install
+        run: npm install
+
+      - name: Build
+        run: |
+          npm run lint
+          npm run build
+
+      - name: Commit
+        env:
+          TZ: Asia/Shanghai
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add dist
+          git commit -m ":bento: Build at \
+          $(date +"%Y-%m-%d %H:%M") \
+          "
+          git push
+
+
+  build-branch-assets:
 
     runs-on: ubuntu-latest
 
