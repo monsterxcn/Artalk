@@ -41,7 +41,7 @@ module.exports = (env, argv) => {
     },
     plugins: [
       new HtmlWebpackPlugin({
-        title: 'Artalk ♂ Dark',
+        title: 'Artalk ♂',
         filename: `${ROOT_PATH}/index.html`,
         template: `${ROOT_PATH}/index-tpl.ejs`,
         inject: 'head',

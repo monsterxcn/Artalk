@@ -1,17 +1,19 @@
 <p align="center">
-<img src="./docs/banner.png" alt="Artalk" width="200">
+<img src="./docs/banner.png" alt="Artalk" width="100" height="100">
 </p>
 
-# [Artalk](https://artalk.js.org)
-> 一款简洁有趣的自托管评论系统
+<div align="center">
 
-[![](https://img.shields.io/npm/v/artalk.svg?style=flat-square)](https://www.npmjs.com/package/artalk)
-[![](https://img.shields.io/npm/dt/artalk.svg?style=flat-square)](https://www.npmjs.com/package/artalk)
-[![](https://img.shields.io/github/last-commit/qwqcode/Artalk/master.svg?style=flat-square)](https://github.com/qwqcode/Artalk/commits/master)
-[![](https://img.shields.io/github/issues-raw/qwqcode/Artalk.svg?style=flat-square)](https://github.com/qwqcode/Artalk/issues)
-[![](https://img.shields.io/github/issues-pr-raw/qwqcode/Artalk.svg?style=flat-square)](https://github.com/qwqcode/Artalk/pulls)
-[![](https://img.shields.io/github/license/qwqcode/Artalk.svg?style=flat-square)](./LICENSE)
-[![](https://img.shields.io/badge/%24-donate-%23ff69b4.svg?style=flat-square)](#捐助)
+一款 ~~简洁~~ 有趣的自托管评论系统
+
+</div></br>
+
+<div align="center">
+
+[![](https://img.shields.io/npm/v/artalk.svg?style=flat-square)](https://www.npmjs.com/package/artalk) [![](https://img.shields.io/npm/dt/artalk.svg?style=flat-square)](https://www.npmjs.com/package/artalk) [![](https://img.shields.io/github/last-commit/monsterxcn/Artalk/master.svg?style=flat-square)](https://github.com/monsterxcn/Artalk/commits/master) [![](https://img.shields.io/github/license/monsterxcn/Artalk.svg?style=flat-square)](./LICENSE)
+
+</div></br>
+
 
 ## 特性
 - 轻量简洁 (~23kB gzipped)
@@ -29,12 +31,16 @@
 - 评论折叠
 - 一页多个评论
 - TypeScript
+- **花里胡哨，不再简洁**
+- **暗色模式，不再将就**
+- **各种表情，除了滑稽**
+- **版权一处，作者哭泣**
 
-[查看 DEMO](https://artalk.js.org)
+~~[查看 DEMO](https://artalk.js.org)~~  不够花哨？看 [我的](https://artalk.vercel.app)
 
 ## 食用
 
-> 前端资源下载：[Artalk.js](./dist/Artalk.js) | [Artalk.css](./dist/Artalk.css)
+> 前端资源下载：[Artalk.js](https://github.com/monsterxcn/Artalk/raw/assets/Artalk.js) | [Artalk.css](https://github.com/monsterxcn/Artalk/raw/assets/Artalk.css)
 
 1. 部署 Artalk 的后端，传送门：[PHP API](https://github.com/qwqcode/Artalk-API-PHP) / Go API / Node API / Python API
 2. 前端页面配置 Artalk 如下：
@@ -68,9 +74,7 @@
 </html>
 ```
 
-前端更多栗子，请参考 [/example/](./example/) 目录
-
-前端更多配置项详见 [/types/artalk-config.d.ts](./types/artalk-config.d.ts)
+暗色模式的切换方式照抄了 [@ChrAlpha/hexo-theme-cards](https://github.com/ChrAlpha/hexo-theme-cards/blob/master/dist/js/darkmode.js)。前端更多栗子请参考 [/example/](./example/) 目录。前端更多配置项详见 [/types/artalk-config.d.ts](./types/artalk-config.d.ts)。
 
 ## 开发
 
@@ -86,11 +90,11 @@ yarn run dev
 yarn run build
 ```
 
-Made with ♥ by QWQAQ
+Made with ♥ by QWQAQ + Monst.x
 
-## 捐助
+## 捐助原作者
 
-如果您愿意给予我一点点支持与帮助，可以通过下面的方式向我捐助，爱你~~~ (/ω＼)
+如果您愿意给予开发者一点点支持与帮助，可以通过下面的方式向开发者捐助 (/ω＼)
 
 | Alipay | Wechat | 
 | :------: | :------: | 
@@ -98,7 +102,8 @@ Made with ♥ by QWQAQ
 
 捐助者的名字将保存于 [捐助者名单](https://github.com/qwqcode/donate-qwqaq)
 
-最后，我再次对您致以我最最最最最诚挚的感谢！
+最后，代原作者再次对您致以最最最最最诚挚的感谢！
 
 ## License
+
 [GPL-2.0](./LICENSE)
