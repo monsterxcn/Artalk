@@ -23,9 +23,7 @@
     @media only screen and (max-width: 768px) {
       body { padding: 0;background: #fafafa }
       .card.billboard { padding-top: 20px }
-      .card { width: 100%;padding: 20px 0 0 0;border-radius: 0; }
-      .card .artalk > .artalk-editor { border-radius: 0;margin-bottom: 20px }
-      .card .artalk > .artalk-list > .artalk-list-header > .artalk-right-action > span.artalk-on { max-width: 50px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis }
+      .card { width: 100vw;padding: 0;border-radius: 0 }
       .to-top { right:0 !important;bottom:0 !important;margin-right: 2vw;margin-bottom: 2vh }
       .to-night { left:0 !important;bottom:0 !important;margin-left: 2vw;margin-bottom: 2vh }
     }
@@ -112,7 +110,7 @@
       el: '#comments',
       placeholder: '说点什么 (づ￣ 3￣)づ',
       defaultAvatar: 'mp',
-      pageKey: 'artalk-demo',
+      pageKey: 'https://artalk.vercel.app/',
       serverUrl: 'https://lab.mocurio.com/artalk/',
       readMore: {
         pageSize: 15,
