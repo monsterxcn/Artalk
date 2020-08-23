@@ -61,21 +61,11 @@ jobs:
         with:
           node-version: '12.x'
 
-      - name: Cache
-        uses: actions/cache@v1
-        env:
-          cache-name: at-node-modules
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }}
-
       - name: Install
-        run: npm install
+        run: yarn install
 
       - name: Build
-        run: |
-          npm run lint
-          npm run build
+        run: yarn lint && yarn build
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
