@@ -108,7 +108,7 @@ export default class EmoticonsPlug extends ArtalkContext {
     Object.entries(this.emoticons).forEach(([grpName, grp]) => {
       if (grp.inputType !== 'image') return
       Object.entries(grp.container).forEach(([name, imgSrc]) => {
-        text = text.split(`:[${name}]`).join(`![${name}](${imgSrc}) `) // replaceAll(...)
+        text = text.split(`:[${name}]`).join(` ![${name}](${imgSrc}) `) // replaceAll(...)
       })
     })
 

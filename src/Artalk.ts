@@ -206,9 +206,15 @@ export default class Artalk {
   private initMarked () {
     const renderer = new marked.Renderer()
     const linkRenderer = renderer.link
+    const imageRenderer = renderer.image
     renderer.link = (href, title, text) => {
       const html = linkRenderer.call(renderer, href, title, text)
       return html.replace(/^<a /, '<a target="_blank" rel="nofollow" ')
+    }
+    renderer.image = (href, title, text) => {
+      // 重新渲染图片，给表情包加上样式
+      const html = imageRenderer.call(renderer, href, title, text)
+      return html.replace(/^<img src="https:\/\/cdn\.jsdelivr\.net\/gh\/monsterxcn\/MyBucket\/owoEmoji/, '<img class="emoji" src="https://cdn.jsdelivr.net/gh/monsterxcn/MyBucket/owoEmoji')
     }
 
     const nMarked = marked

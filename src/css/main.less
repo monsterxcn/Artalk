@@ -22,19 +22,19 @@
     word-wrap: break-word;
     word-break: break-all;
   }
-
+  .artalk-comment-main {
+    overflow: auto;
+  }
   pre {
-    background-color: var(--at-bg-code);
+    position: static;
     padding: 10px;
+    line-height: @line-height;
+    background-color: var(--at-bg-code);
+    padding: 5px 10px;
     border-radius: @block-radius/2;
-    max-width: 80vw;
-    margin-right: 20%;
-    overflow-x: auto;
-	  text-align: left;
-	  white-space: pre;
-	  word-spacing: normal;
-	  word-break: normal;
-	  word-wrap: normal;
+    margin: 0;
+    font-family: @font-family-pre;
+    overflow: auto;
   }
 
   a {
@@ -64,6 +64,9 @@
 
   img {
     max-width: 100%;
+  }
+  img.emoji {
+    height: 2em;
   }
 }
 
