@@ -16,7 +16,7 @@ export default class Comment extends ArtalkContext {
 
   public parent: Comment|null
   public nestedNum: number
-  private readonly maxNestedNo = 2 // 最多嵌套层数
+  private readonly maxNestedNo = this.artalk.conf.maxNest || 3  // 最多嵌套层数
   public children: Comment[] = []
 
   constructor (artalk: Artalk, public list: List, public data: CommentData) {

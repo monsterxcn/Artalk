@@ -25,6 +25,11 @@ export interface ArtalkConfig {
   defaultAvatar?: string
 
   /**
+   * 评论显示最多嵌套层数
+   */
+  maxNest: number
+
+  /**
    * 页面唯一标识
    */
   pageKey: string

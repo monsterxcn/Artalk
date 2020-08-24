@@ -19,6 +19,7 @@ const defaultOpts: ArtalkConfig = {
   noComment: '来做第一个留言的人吧！',
   sendBtn: '传达',
   defaultAvatar: 'mp',
+  maxNest: null,
   pageKey: '',
   serverUrl: '',
   emoticons: require('./assets/emoticons.json'),
