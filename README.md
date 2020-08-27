@@ -63,7 +63,7 @@
     placeholder: '来啊，快活啊 ( ゜- ゜)', // 占位符
     noComment: '快来成为第一个评论的人吧~', // 无评论时显示
     defaultAvatar: 'mp', // 参考 https://cn.gravatar.com/site/implement/images/#default-image
-    maxNested: 3, // 指定评论显示的最大嵌套层数
+    maxNest: 3, // 指定评论显示的最大嵌套层数
     pageKey: '[页面唯一标识]',
     serverUrl: '[后端程序URL]',
     readMore: { // 阅读更多配置
